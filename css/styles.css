@@ -34,7 +34,7 @@ main {
 
 .myHeading {
   grid-area: header;
-  background-color: darkred; }
+  background-color: brown; }
 
 .myNav {
   width: 200px;
