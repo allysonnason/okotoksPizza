@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url("https://www.jlstms.com/data/wallpapers/32/im58749790.jpg");
+    font-family: sans-serif;
+    background-position: center;
+    background-size: cover;
+}
+
+.row img {
+    max-width: 100%;
+}
+
+.mobilephone {
+    display: none;
+}
+@media (max-width: 991px) {
+    .headingphone {
+        display: none;
+    }
+    .mobilephone {
+        display: inline;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+    grid-template-rows: auto 1fr 60px;
+    // grid-template-columns: 10% 1fr;
+    grid-gap: 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    grid-area: main;
+}
+
+.myHeading {
+    grid-area: header;
+    background-color: darkred;
+}
+
+.myNav {
+    // grid-area: nav;
+    width: 200px;
+    height: 100%;
+    background:black;
+    position: fixed;
+    left: -200px;
+    transition: all 0.4s ease;
+
+    &.open {
+        left: 0px;
+
+        + .toggle-btn {
+            position: relative;
+            left: 200px;
+        }
+    }
+
+    ul li {
+        color: white;
+        list-style: none;
+        padding: 15px 10px;
+        border-bottom: 1px solid white;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.toggle-btn {
+
+    width: 60px;
+    left: 230px;
+    top: 20px;
+    transition: all 0.4s ease;
+
+    span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: black;
+        margin: 5px 0px;
+    }
+}
+
+.headingphone {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 80px;
+}
+
+.contact {
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    h3 {
+        font-size: 45px;
+    }
+}
+.myFooter {
+    grid-area: footer;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    padding: 30px 0;
+}
+
+.column {
+    padding-bottom: 30px;
+}
+
+footer {
+    background-color: darkred;
+    text-align: center;
+    color: white;
+    width: 100%;
+}

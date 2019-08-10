@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: url("https://www.jlstms.com/data/wallpapers/32/im58749790.jpg");
+    font-family: sans-serif;
+    background-position: center;
+    background-size: cover;
+}
+
+.mobilephone {
+    display: none;
+}
+@media (max-width: 991px) {
+    .desktopphone {
+        display: none;
+
+    }
+    .mobilephone {
+        display: inline;
+    }
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 80px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "about"
+    "footer";
+    grid-template-rows: auto 1fr 60px;
+    // grid-template-columns: 10% 1fr;
+    grid-gap: 20px;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.myHeading {
+    grid-area: header;
+    background-color: darkred;
+}
+
+.About {
+    grid-area: about;
+}
+
+h2 {
+    color: white;
+    font-size: 60px;
+    padding-left: 20px;
+}
+p {
+    padding: 60px 60px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    background: black;
+}
+.myNav {
+    // grid-area: nav;
+    width: 200px;
+    height: 100%;
+    background:black;
+    position: fixed;
+    left: -200px;
+    transition: all 0.4s ease;
+
+    &.open {
+        left: 0px;
+
+        + .toggle-btn {
+            position: relative;
+            left: 200px;
+        }
+    }
+
+    ul li {
+        color: white;
+        list-style: none;
+        padding: 15px 10px;
+        border-bottom: 1px solid white;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.toggle-btn {
+
+    width: 60px;
+    left: 230px;
+    top: 20px;
+    transition: all 0.4s ease;
+
+    span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: black;
+        margin: 5px 0px;
+    }
+}
+
+.video {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.myFooter {
+    grid-area: footer;
+    width: 100%;
+}
+
+.img {
+    padding-left: 20%;
+}
+.logo {
+    float: left;
+    padding: 30px 0;
+}
+
+footer {
+    background-color: darkred;
+    text-align: center;
+    color: white;
+}

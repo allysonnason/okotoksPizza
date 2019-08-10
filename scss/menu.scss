@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    padding: 0;
+}
+.mobilephone {
+    display: none;
+}
+@media (max-width: 991px) {
+    .desktopphone {
+        display: none;
+
+    }
+    .mobilephone {
+        display: inline;
+    }
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 80px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "menu"
+    "footer";
+    grid-template-rows: auto 1fr 60px;
+    // grid-template-columns: 10% 1fr;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.myHeading {
+    grid-area: header;
+    background-color: darkred;
+}
+
+.myMenu {
+    grid-area: menu;
+
+    .row img {
+        max-width: 100%;
+    }
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+ul {
+    margin: 0;
+    padding: 10px 20px;
+    border-top: none;
+
+    li{
+        list-style: none;
+        padding: 5px 0;
+        font-size: 16px;
+        font-weight: 900;
+    }
+}
+
+.myNav {
+    // grid-area: nav;
+    width: 200px;
+    height: 100%;
+    background:black;
+    position: fixed;
+    left: -200px;
+    transition: all 0.4s ease;
+
+    &.open {
+        left: 0px;
+
+        + .toggle-btn {
+            position: relative;
+            left: 200px;
+        }
+    }
+
+    ul li {
+        color: white;
+        list-style: none;
+        padding: 15px 10px;
+        border-bottom: 1px solid white;
+
+        a {
+            color: white;
+        }
+    }
+}
+
+.toggle-btn {
+    width: 60px;
+    left: 230px;
+    top: 20px;
+    transition: all 0.4s ease;
+
+    span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background: black;
+        margin: 5px 0px;
+    }
+}
+
+.myFooter {
+    grid-area: footer;
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    padding: 30px 0;
+}
+
+footer {
+    background-color: darkred;
+    text-align: center;
+    color: white;
+}
